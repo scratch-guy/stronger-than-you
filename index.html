@@ -21,8 +21,19 @@
     </style>
   </head>
   <body>
-    <video autoplay playsinline>
+    <video id="vid" autoplay muted playsinline>
       <source src="videoplayback.mp4" type="video/mp4">
     </video>
+
+    <script>
+      const v = document.getElementById("vid");
+
+      const enableSound = () => {
+        v.muted = false;
+      };
+
+      document.addEventListener("click", enableSound, { once: true });
+      document.addEventListener("keydown", enableSound, { once: true });
+    </script>
   </body>
 </html>
